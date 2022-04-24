@@ -7,7 +7,8 @@
     "build": "webpack",
     "format": "eslint ./src/**/*.js",
     "start": "webpack-dev-server",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "firebase deploy --non-interactive"
   },
   "author": "Rafael Camargo <hello@rafaelcamargo.com>",
   "license": "MIT",
@@ -19,6 +20,7 @@
     "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.5",
     "eslint": "^8.13.0",
+    "firebase-tools": "^10.7.1",
     "html-loader": "^3.1.0",
     "html-loader-jest": "^0.2.1",
     "html-webpack-plugin": "^5.5.0",
