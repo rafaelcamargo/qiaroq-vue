@@ -8,7 +8,7 @@
       "file": "src/base/images/favicon.png"
     },
     "scripts": {
-      "index": "src/app.js"
+      "index": "src/index.js"
     },
     "tests": {
       "files": ["src/**/*.js", "!src/**/mocks/**/*.js"]

@@ -1,3 +1,6 @@
+import analyticsService from '@src/base/services/analytics/analytics';
+import app from './app';
+
 describe('App', () => {
   const APP_CONTAINER_SELECTOR = 'data-app-container';
 
@@ -8,18 +11,24 @@ describe('App', () => {
   }
 
   beforeEach(() => {
+    analyticsService.init = jest.fn();
     document.body.appendChild(createAppRootElement());
-    require('./app');
   })
 
   afterEach(() => {
-    document.querySelector(`[${APP_CONTAINER_SELECTOR}]`).remove()
-  })
+    document.querySelector(`[${APP_CONTAINER_SELECTOR}]`).remove();
+  });
 
-  it('should render homepage', done => {
+  it('should render homepage on initialize', done => {
+    app.init();
     setTimeout(() => {
-      expect(document.querySelector('h1').textContent).toEqual('Hello World')
+      expect(document.querySelector('h1').textContent).toEqual('Hello World');
       done();
     });
-  })
-})
+  });
+
+  it('should initialize analytics on initialize', () => {
+    app.init();
+    expect(analyticsService.init).toHaveBeenCalled();
+  });
+});
