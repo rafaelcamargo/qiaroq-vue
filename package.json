@@ -34,6 +34,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@glorious/analytics": "^0.2.1",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14"
   }
